@@ -55,28 +55,13 @@ connection.connect(function(err) {
                                 console.log('Your order for ' + user.howMany + ' ' + res[user.itemNumber - 1].product_name +
                                     '(s) has been placed.');
                                 console.log('Your total is $' + totalPrice);
-                            //  addOrder();
                                 exit();
                             });
                     } else {
                         console.log("We're sorry, we only have " + res[user.itemNumber - 1].stock_quantity + " of that product. Please check back with us after we have restocked.");
-                        // addOrder();
                         exit();
                     }
 
-                    // function addOrder() {
-                    // 	inquirer.prompt([
-                    // 		{   type: 'confirm',
-                    // 			message: 'Would you like to order anything else?',
-                    // 			name: 'again'
-                    // },
-                    // 	]).then(function (user) {
-                    // 		if(user.again) {
-                    // 			buy();
-                    // 		} else {
-                    // 			exit();}
-                    // });
-                    // }
                     function exit() {
                         connection.end();
                         console.log('Thanks for shopping at BAMAzon.' + '\n' + ' Have a great day!');
